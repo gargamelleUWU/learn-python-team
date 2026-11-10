@@ -26,3 +26,39 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+
+
+def test_grade_classification():
+    """IF statement with multiple ELIF branches"""
+
+    grade = 85
+    result = ''
+
+    if grade >= 90:
+        result = 'A'
+    elif grade >= 80:
+        result = 'B'
+    elif grade >= 70:
+        result = 'C'
+    else:
+        result = 'D'
+
+    assert result == 'B'
+
+
+def test_nested_conditions():
+    """Check ticket eligibility with a condition inside another condition."""
+
+    age = 18
+    has_ticket = True
+    result = ''
+
+    if age >= 18:
+        if has_ticket:
+            result = 'Entry allowed'
+        else:
+            result = 'Ticket required'
+    else:
+        result = 'Must be at least 18'
+
+    assert result == 'Entry allowed'
