@@ -44,3 +44,21 @@ def test_grade_classification():
         result = 'D'
 
     assert result == 'B'
+
+
+def test_nested_conditions():
+    """Check ticket eligibility with a condition inside another condition."""
+
+    age = 18
+    has_ticket = True
+    result = ''
+
+    if age >= 18:
+        if has_ticket:
+            result = 'Entry allowed'
+        else:
+            result = 'Ticket required'
+    else:
+        result = 'Must be at least 18'
+
+    assert result == 'Entry allowed'
