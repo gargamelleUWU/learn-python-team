@@ -170,6 +170,30 @@ def test_list_methods():
     assert fruits == []
 
 
+def test_sorting_students_by_score():
+    """Sort records by a selected value without changing the original list."""
+
+    students = [('Ari', 82), ('Sam', 95), ('Lee', 88)]
+
+    ranked_students = sorted(students, key=lambda student: student[1], reverse=True)
+
+    assert ranked_students == [('Sam', 95), ('Lee', 88), ('Ari', 82)]
+    assert students == [('Ari', 82), ('Sam', 95), ('Lee', 88)]
+
+
+def test_filtering_and_slicing_daily_temperatures():
+    """Filter list values with a comprehension and select recent values with a slice."""
+
+    daily_temperatures = [18, 21, 19, 24, 26, 23, 20]
+
+    warm_days = [temperature for temperature in daily_temperatures if temperature >= 23]
+    recent_temperatures = daily_temperatures[-3:]
+
+    assert warm_days == [24, 26, 23]
+    assert recent_temperatures == [26, 23, 20]
+    assert daily_temperatures == [18, 21, 19, 24, 26, 23, 20]
+
+
 def test_del_statement():
     """The del statement
 
