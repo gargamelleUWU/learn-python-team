@@ -170,6 +170,17 @@ def test_list_methods():
     assert fruits == []
 
 
+def test_sorting_students_by_score():
+    """Sort records by a selected value without changing the original list."""
+
+    students = [('Ari', 82), ('Sam', 95), ('Lee', 88)]
+
+    ranked_students = sorted(students, key=lambda student: student[1], reverse=True)
+
+    assert ranked_students == [('Sam', 95), ('Lee', 88), ('Ari', 82)]
+    assert students == [('Ari', 82), ('Sam', 95), ('Lee', 88)]
+
+
 def test_del_statement():
     """The del statement
 
