@@ -9,6 +9,7 @@ the next line, and must be indented.
 """
 
 
+
 def fibonacci_function_example(number_limit):
     """Generate a Fibonacci series up to number_limit.
 
@@ -18,6 +19,7 @@ def fibonacci_function_example(number_limit):
     interactively browse through code; it’s good practice to include docstrings in code that you
     write, so make a habit of it.
     """
+
 
     # The execution of a function introduces a new symbol table used for the local variables of the
     # function. More precisely, all variable assignments in a function store the value in the local
@@ -122,41 +124,19 @@ def test_function_definition():
 
     assert greet_with_closure() == 'Hello there, John!'
 
-   
+    # Default parameter values
+    def calculate_discount(price, discount=10):
+        return price - (price * discount / 100)
 
-def rectangle_area(width, height=1):
-    """Calculate the area of a rectangle.
+    assert calculate_discount(100) == 90
+    assert calculate_discount(100, 20) == 80
 
-    Parameters can have default values. If the caller omits an argument that has a default,
-    Python uses the default. Parameters without defaults must come before those with defaults.
-    """
-    return width * height
+    # Simple input validation
+    def is_positive(number):
+        if number > 0:
+            return True
+        return False
 
-
-def min_and_max(numbers):
-    """Return the smallest and the largest number of the list.
-
-    A function may return several values at once. Python packs them into a tuple.
-    """
-    return min(numbers), max(numbers)
-
-
-def test_function_parameters_and_return_values():
-    """Function parameters, default values and return values"""
-
-    assert rectangle_area(3, 4) == 12
-
-    assert rectangle_area(5) == 5
-
-    assert rectangle_area(height=2, width=6) == 12
-
-    assert min_and_max([4, 1, 9, 3]) == (1, 9)
-    smallest, largest = min_and_max([4, 1, 9, 3])
-    assert smallest == 1
-    assert largest == 9
-
-   
-    def no_return_function():
-        pass
-
-    assert no_return_function() is None
+    assert is_positive(5) is True
+    assert is_positive(-3) is False
+    assert is_positive(0) is False
