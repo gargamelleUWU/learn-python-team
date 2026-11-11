@@ -9,6 +9,7 @@ the next line, and must be indented.
 """
 
 
+
 def fibonacci_function_example(number_limit):
     """Generate a Fibonacci series up to number_limit.
 
@@ -18,6 +19,7 @@ def fibonacci_function_example(number_limit):
     interactively browse through code; it’s good practice to include docstrings in code that you
     write, so make a habit of it.
     """
+
 
     # The execution of a function introduces a new symbol table used for the local variables of the
     # function. More precisely, all variable assignments in a function store the value in the local
@@ -121,3 +123,20 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+    # Default parameter values
+    def calculate_discount(price, discount=10):
+        return price - (price * discount / 100)
+
+    assert calculate_discount(100) == 90
+    assert calculate_discount(100, 20) == 80
+
+    # Simple input validation
+    def is_positive(number):
+        if number > 0:
+            return True
+        return False
+
+    assert is_positive(5) is True
+    assert is_positive(-3) is False
+    assert is_positive(0) is False
