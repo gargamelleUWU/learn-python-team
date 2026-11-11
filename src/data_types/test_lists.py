@@ -173,12 +173,12 @@ def test_list_methods():
 def test_sorting_students_by_score():
     """Sort records by a selected value without changing the original list."""
 
-    students = [('Gimli', 82), ('Frodo', 95), ('Gandalf', 88)]
+    students = [('Bilbo', 82), ('TomBambadil', 95), ('Smaug', 88)]
 
     ranked_students = sorted(students, key=lambda student: student[1], reverse=True)
 
-    assert ranked_students == [('Frodo', 95), ('Gandalf', 88), ('Gimli', 82)]
-    assert students == [('Gimly', 82), ('Frodo', 95), ('Gandalft', 88)]
+    assert ranked_students == [('TomBambadil', 95), ('Smaug', 88), ('Bilbo', 82)]
+    assert students == [('Bilbo', 82), ('TomBambadil', 95), ('Smaug', 88)]
 
 
 def test_filtering_and_slicing_daily_temperatures():
