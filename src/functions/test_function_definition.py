@@ -121,3 +121,42 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+   
+
+def rectangle_area(width, height=1):
+    """Calculate the area of a rectangle.
+
+    Parameters can have default values. If the caller omits an argument that has a default,
+    Python uses the default. Parameters without defaults must come before those with defaults.
+    """
+    return width * height
+
+
+def min_and_max(numbers):
+    """Return the smallest and the largest number of the list.
+
+    A function may return several values at once. Python packs them into a tuple.
+    """
+    return min(numbers), max(numbers)
+
+
+def test_function_parameters_and_return_values():
+    """Function parameters, default values and return values"""
+
+    assert rectangle_area(3, 4) == 12
+
+    assert rectangle_area(5) == 5
+
+    assert rectangle_area(height=2, width=6) == 12
+
+    assert min_and_max([4, 1, 9, 3]) == (1, 9)
+    smallest, largest = min_and_max([4, 1, 9, 3])
+    assert smallest == 1
+    assert largest == 9
+
+   
+    def no_return_function():
+        pass
+
+    assert no_return_function() is None
