@@ -17,7 +17,7 @@ def test_if_statement():
     conclusion = ''
 
     if number < 0:
-        conclusion = 'Number is less than zero'
+        conclusion = 'the given number is below zero'
     elif number == 0:
         conclusion = 'Number equals to zero'
     elif number < 1:
